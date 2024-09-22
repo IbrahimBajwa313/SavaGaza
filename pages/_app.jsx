@@ -35,91 +35,7 @@ export default function App({ Component, pageProps }) {
 
   const [subTotal, setSubTotal] = useState(0)
 
-  // Save Cart Function to save the user's activity
-  // also calculating subTotal
-  const saveCart = (myCart) => {
-    localStorage.setItem("cart", JSON.stringify(myCart))
-
-    // calculating subTotal
-    let subT = 0;
-    let keys = Object.keys(myCart)
-
-    for (let i = 0; i < keys.length; i++) {
-      subT += myCart[keys[i]].price * myCart[keys[i]].qty;
-    }
-    setSubTotal(subT)
-
-    localStorage.setItem("SubTotal", subT)
-  }
-
-  useEffect(() => {
-    setSubTotal(localStorage.getItem("SubTotal"));
-
-  }, [])
-  // addToCart function to add items into the cart
-  const addToCart = (itemCode, name, qty, price, size, variant,img ,description) => {
-    let newCart = cart;
-    
-    if (itemCode in cart) {
-      newCart[itemCode].qty = cart[itemCode].qty + qty;
-    }
-    else {
-      newCart[itemCode] = { name, qty: 1, price, size, variant , img,description };
-    }
-    setCart(newCart);
-    saveCart(newCart);
-  }
    
-  
-  // oneMinusQty from Cart Function
-  const oneMinusQty = (itemCode ) => {
-
-    let newCart = cart;
-
-    if (itemCode in cart) {
-      newCart[itemCode].qty = cart[itemCode].qty - 1;
-    }
-    
-    // Deleting specified item
-    if (newCart[itemCode].qty <= 0) {
-      delete newCart[itemCode]
-    }
-    setCart(newCart);
-    saveCart(newCart);
-  }
-
-  // oneAddQty from Cart Function
-  const oneAddQty = (itemCode ) => {
-
-    let newCart = cart;
-    
-    if (itemCode in cart) {
-      newCart[itemCode].qty = cart[itemCode].qty + 1;
-    }
-    setCart(newCart);
-    saveCart(newCart);
-  }
-
-   
-  // DeleteQty from Cart Function
-  const delQty = (itemCode ) => {
-
-    let newCart = cart;
-     
-    if (itemCode in cart) { 
-      delete newCart[itemCode]
-    }
-    
-    setCart(newCart);
-    saveCart(newCart);
-  }
-
-  // Clear Cart Function
-  const clearCart = () => {
-    setCart({})
-    saveCart({})
-  }
-
 
   return (
     <>
@@ -135,9 +51,9 @@ export default function App({ Component, pageProps }) {
         <Header cart={cart} />
     </Headroom>
 
-    <productInfo.Provider className={"dark"} value={{ cart, addToCart, oneMinusQty, clearCart, subTotal, oneAddQty, delQty }} {...pageProps} >
+     
         <Component />
-    </productInfo.Provider>
+    {/* </productInfo.Provider> */}
     
     <Footer />
     
