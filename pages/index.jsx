@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import HeroBanner from "@/components/HeroBanner";
+import About from "@/components/About";
 import Wrapper from "@/components/Wrapper";
 import { useInView } from 'react-hook-inview';
 import { motion } from "framer-motion";
@@ -49,6 +50,7 @@ export default function Home() {
 
         
       </Wrapper>
+      <About />
     </main>
   );
 }
