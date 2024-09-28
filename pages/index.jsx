@@ -11,21 +11,18 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [ref, inView] = useInView();
 
-
   return (
     <main className="overflow-x-hidden w-screen z-20">
-
       <HeroBanner />
       <Wrapper>
         <div className="text-center mb-12 max-w-[800px] mt-[50px] md:mt-[80px] mx-auto">
-          <div className="font-bold text-[28px] md:text-[34px] mb-2 leading-tight">
+          {/* <div className="font-bold text-[28px] md:text-[34px] mb-2 leading-tight">
             Save Gaza About
-          </div>  
-
+          </div> */}
         </div>
-            <HowYouCanHelp />
+        <About />
+        <HowYouCanHelp />
       </Wrapper>
-      <About />
     </main>
   );
 }
