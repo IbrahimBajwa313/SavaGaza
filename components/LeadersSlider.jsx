@@ -9,30 +9,58 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 const LeadersSlider = () => {
   const leaders = [
     {
-      name: "Maria B.",
-      title: "Fashion Designer",
-      image: "/protest1.jpg", // Replace with your image path
+      name: "Mushtaq Khan",
+      title: "Ex-Member of Senate",
+      image: "/LeadersImages/Mushtaq-khan.webp", // Replace with your image path
     },
     {
       name: "Humaira Tayyaba",
       title: "Founder Save Gaza Campaign",
-      image: "/protest1.jpg", // Replace with your image path
+      image: "/LeadersImages/Humaira-Tayyaba.webp", // Replace with your image path
+    }, 
+    {
+      name: "Wahaj Ahmad",
+      title: "Founding Member",
+      image: "/LeadersImages/Wahaj-Ahmad.webp", // Replace with your image path
     },
     {
       name: "Mahera Sajid",
       title: "Founding Member (IT Professional)",
-      image: "/protest1.jpg", // Replace with your image path
+      image: "/LeadersImages/Mahera-Sajid.webp", // Replace with your image path
     },
     {
-      name: "Mushtaq Khan",
-      title: "Ex-Member of Senate",
-      image: "/protest1.jpg", // Replace with your image path
+      name: "Farooq Shah Khan",
+      title: "Founding Member (Law Student)",
+      image: "/LeadersImages/Farooq-Shah-Khan.webp", // Replace with your image path
     },
     {
-      name: "Another Leader",
-      title: "Another Title",
-      image: "/protest1.jpg", // Replace with your image path
+      name: "Ahmad Maaz",
+      title: "Media Director Sava Gaza Campaign",
+      image: "/LeadersImages/Ahmad-Maaz-Shafqat.webp", // Replace with your image path
     },
+    
+    {
+      name: "Tayyaba Durani",
+      title: "Executive Team Member",
+      image: "/LeadersImages/Tayyaba-Durrani.webp", // Replace with your image path
+    },
+    {
+      name: "Dr. Sohaib Khalid",
+      title: "Executive Team Member (Urologist)",
+      image: "/LeadersImages/Dr-Sohaib-Khalid.webp", // Replace with your image path
+    },
+   
+    {
+      name: "Syed Bilal Hamdani",
+      title: "Executive Team Member & IIUI Team Lead (Sharia and Law Student)",
+      image: "/LeadersImages/Syed-Bilal-Hamdani.webp", // Replace with your image path
+    },
+    {
+      name: "Mushahid Hussain",
+      title: "Ex-Member Of Senate",
+      image: "/LeadersImages/Mushahid-Hussain-Sayed.webp", // Replace with your image path
+    },
+    
   ];
 
   return (
@@ -81,11 +109,11 @@ const LeadersSlider = () => {
                 <p className="text-gray-800">{leader.title}</p>
               </div>
             </SwiperSlide>
-          ))}
+         ))}
         </Swiper>
       </div>
     </section>
-  );
+ );
 };
 
 export default LeadersSlider;
