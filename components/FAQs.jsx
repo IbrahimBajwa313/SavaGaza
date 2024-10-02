@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Image from "next/image"; // Import the Image component from Next.js
+import Image from "next/image";
 
 const FAQs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -35,40 +35,58 @@ const FAQs = () => {
   }, [activeIndex]);
 
   return (
-    <section className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 bg-gray-50 rounded-lg shadow-md">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-green-600">
-        Frequently Asked Questions
-      </h2>
-      <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
-        <div className="md:w-1/2">
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200 pb-4">
-                <button
-                  className="w-full text-left py-4 flex justify-between items-center bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300"
-                  onClick={() => toggleFAQ(index)}
-                >
-                  <span className="text-lg font-semibold text-green-600">{faq.question}</span>
-                  <span className="text-xl text-green-600">{activeIndex === index ? "-" : "+"}</span>
-                </button>
-                {activeIndex === index && (
-                  <div className={`py-2 px-2 bg-gray-50 rounded-lg ${animationClass}`}>
-                    <p className="text-gray-600 text-sm sm:text-base">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+    <section
+      className="relative min-h-screen w-full flex items-center justify-center bg-gray-50"
+      style={{
+        backgroundImage: "url('/bgGaza.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-black opacity-30"></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 bg-gray-50 bg-opacity-30 rounded-lg shadow-lg">
+        <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-gray-800 font-serif">
+          Frequently Asked Questions
+        </h2>
+        <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+          <div className="md:w-1/2">
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div key={index} className="border-b border-gray-400 pb-4">
+                  <button
+                    className="w-full text-left py-4 flex justify-between items-center bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300 rounded-md px-4 shadow-md"
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <span className="text-lg font-semibold text-white">{faq.question}</span>
+                    <span className="text-xl text-white">{activeIndex === index ? "-" : "+"}</span>
+                  </button>
+                  {activeIndex === index && (
+                    <div
+                      className={`py-2 px-2 mt-2 bg-gray-100 rounded-lg shadow-inner transition-all duration-300 ease-in-out ${animationClass}`}
+                    >
+                      <p className="text-gray-700 text-sm sm:text-base">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="md:w-1/2 mt-6 md:mt-0 ml-16"> {/* Added margin-left here */}
-          <Image
-            src="/faq.webp" // Ensure this path is correct
-            alt="Descriptive Alt Text"
-            layout="responsive" // Ensures the image scales responsively
-            width={500} // Specify width for optimization
-            height={300} // Specify height for optimization
-            className="rounded-lg shadow-lg"
-          />
+
+          <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/faq.webp"
+                alt="Support Image"
+                layout="responsive"
+                width={500}
+                height={300}
+                className="rounded-lg transition-transform transform hover:scale-105 duration-300"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
