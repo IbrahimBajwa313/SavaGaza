@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import HeroBanner from "@/components/HeroBanner";
 import About from "@/components/About";
+import FAQs from "@/components/FAQs";
 import LeadersSlider from "@/components/LeadersSlider";
 import Wrapper from "@/components/Wrapper";
 import { useInView } from "react-hook-inview";
@@ -15,12 +16,10 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden w-screen z-20">
       <HeroBanner />
-     
-        
-        <About />
-        <HowYouCanHelp />
-        <LeadersSlider/>
-      {/* </Wrapper> */}
+      <About />
+      <HowYouCanHelp />
+      <LeadersSlider />
+      <FAQs />
     </main>
   );
 }
