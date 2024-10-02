@@ -50,7 +50,7 @@ const LeadersSlider = () => {
     },
     {
       name: "Syed Bilal Hamdani",
-      title: "Executive Team Member & IIUI Team Lead (Sharia and Law Student)",
+      title: "Executive Team Member & IIUI Team Lead",
       image: "/LeadersImages/Syed-Bilal-Hamdani.webp",
     },
     {
@@ -67,16 +67,16 @@ const LeadersSlider = () => {
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+        <h2 className="text-base sm:text-3xl font-bold mb-2 text-white">
           Leaders Driving Save Gaza Movement
         </h2>
-        <p className="text-xl sm:text-2xl font-semibold text-white mb-8">
+        <p className="text-sm sm:text-2xl font-semibold text-white mb-6">
           No one is free until Palestine is free!
         </p>
 
         <Swiper
           modules={[Pagination, Navigation, Autoplay]}
-          spaceBetween={30}
+          spaceBetween={20}
           centeredSlides={false}
           loop={true}
           autoplay={{
@@ -91,36 +91,40 @@ const LeadersSlider = () => {
           breakpoints={{
             640: {
               slidesPerView: 1,
+              spaceBetween: 10,
             },
             768: {
               slidesPerView: 2,
+              spaceBetween: 20,
             },
             1024: {
               slidesPerView: 3,
+              spaceBetween: 30,
             },
             1280: {
               slidesPerView: 4,
+              spaceBetween: 30,
             },
           }}
           className="mySwiper"
         >
           {leaders.map((leader, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white p-6 rounded-lg shadow-lg relative z-10 flex flex-col items-center justify-center h-80"> {/* Fixed height for uniformity */}
-                <div className="relative w-40 h-40 mb-4">
+              <div className="bg-white p-4 rounded-lg shadow-lg relative z-10 flex flex-col items-center justify-center lg:h-80"> {/* Fixed height for uniformity */}
+                <div className="relative w-32 h-32 mb-4"> {/* Responsive image size */}
                   <Image
                     src={leader.image}
                     alt={leader.name}
                     className="rounded-full"
                     fill
                     style={{ objectFit: "cover" }}
-                    sizes="(max-width: 640px) 100vw, 160px"
+                    sizes="(max-width: 640px) 80vw, (min-width: 640px) 160px"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-green-600 text-center">
+                <h3 className="text-lg font-bold text-green-600 text-center">
                   {leader.name}
                 </h3>
-                <p className="text-gray-800 text-center">{leader.title}</p>
+                <p className="text-gray-800 text-center text-sm">{leader.title}</p>
               </div>
             </SwiperSlide>
           ))}
