@@ -52,7 +52,7 @@ const FAQs = () => {
           Frequently Asked Questions
         </h2>
         <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
-          <div className="md:w-1/2">
+          <div className="md:w-">
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <div key={index} className="border-b border-gray-400 pb-4">
@@ -75,7 +75,7 @@ const FAQs = () => {
             </div>
           </div>
 
-          <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+          {/* <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/faq.webp"
@@ -86,7 +86,7 @@ const FAQs = () => {
                 className="rounded-lg transition-transform transform hover:scale-105 duration-300"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
