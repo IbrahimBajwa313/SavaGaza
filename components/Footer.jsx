@@ -1,133 +1,158 @@
 import Link from "next/link";
 import React from "react";
-import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import Wrapper from "./Wrapper";
-import { FaWhatsapp } from "react-icons/fa6";
 
-const Footer = () => {
-
-    
+export default function Footer() {
     return (
-        <footer className="bg-black text-white  pt-14 pb-3 mt-10">
-            <Wrapper className="flex justify-between flex-col md:flex-row gap-[50px] md:gap-0">
+        <footer className="bg-black text-white pt-14 pb-3 mt-4">
+            {/* Subscribe Section */}
+            <div className="relative flex justify-center items-center sm:mt-[-80px] mt-0 mb-10">
+                <div className="flex flex-col items-center justify-center w-full md:w-3/4 bg-gradient-to-r from-red-500 via-black to-green-500 p-4 rounded-lg">
+                    <h3 className="text-lg md:text-xl font-black mb-4">Subscribe for News Letter</h3>
+                    <div className="flex items-center w-full max-w-md">
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            className="flex-1 p-2 rounded-l-md text-black focus:outline-none"
+                        />
+                        <button className="bg-red-500 text-white px-4 py-2 rounded-r-md hover:bg-red-600">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <Wrapper className="flex flex-col md:flex-row justify-between gap-[50px] md:gap-0">
+                
                 {/* LEFT START */}
-                <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
-                    {/* MENU START */}
-                    <div className="flex flex-col gap-3 shrink-0">
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            Find a store
-                        </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            become a partner
-                        </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            sign up for email
-                        </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            send us feedback
-                        </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            student discount
-                        </div>
+                <div className="flex flex-col gap-3 shrink-0 text-center md:text-left">
+                    <img src="" alt="SGC Logo" className="w-20 mx-auto md:mx-0" />
+                    <div className="text-sm">
+                        SGC is working committedly to make Palestine a free state.
                     </div>
-                    {/* MENU END */}
-
-                    {/* NORMAL MENU START */}
-                    <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] shrink-0">
-                        {/* MENU START */}
-                        <div className="flex flex-col gap-3">
-                            <div className="font-oswald font-medium uppercase text-sm">
-                                get help
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Order Status
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Delivery
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Returns
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Payment Options
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Contact Us
-                            </div>
-                        </div>
-                        {/* MENU END */}
-
-                        {/* MENU START */}
-                        <div className="flex flex-col gap-3">
-                            <div className="font-oswald font-medium uppercase text-sm">
-                                About nike
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                News
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Careers
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Investors
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Sustainability
-                            </div>
-                        </div>
-                        {/* MENU END */}
-                    </div>
-                    {/* NORMAL MENU END */}
                 </div>
                 {/* LEFT END */}
 
-                {/* RIGHT START */}
-                <div className="flex gap-4 justify-center md:justify-start">
-                    <div
-                        onClick={() =>
-                            window.open("https://facebook.com", "_blank")
-                        }
-                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
-                    >
-                        <FaFacebookF size={20} />
+                {/* MIDDLE START - Use Cases, Resources, Company */}
+                <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
+                    {/* Use Cases Section */}
+                    <div className="flex flex-col gap-3 shrink-0">
+                        <div className="font-oswald font-medium uppercase text-sm">
+                            Use Cases
+                        </div>
+                        <Link href="/use-cases/web-designers" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Web-designers
+                        </Link>
+                        <Link href="/use-cases/marketers" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Marketers
+                        </Link>
+                        <Link href="/use-cases/small-business" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Small Business
+                        </Link>
+                        <Link href="/use-cases/website-builder" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Website Builder
+                        </Link>
                     </div>
-                    <Link
-                        href="https://twitter.com"
-                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
-                    >
-                        <FaWhatsapp size={20} />
-                    </Link>
-                    
-                    
+
+                    {/* Resources Section */}
+                    <div className="flex flex-col gap-3 shrink-0">
+                        <div className="font-oswald font-medium uppercase text-sm">
+                            Resources
+                        </div>
+                        <Link href="/resources/academy" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Academy
+                        </Link>
+                        <Link href="/resources/blog" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Blog
+                        </Link>
+                        <Link href="/resources/themes" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Themes
+                        </Link>
+                        <Link href="/resources/hosting" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Hosting
+                        </Link>
+                        <Link href="/resources/developers" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Developers
+                        </Link>
+                    </div>
+
+                    {/* Company Section */}
+                    <div className="flex flex-col gap-3 shrink-0">
+                        <div className="font-oswald font-medium uppercase text-sm">
+                            Company
+                        </div>
+                        <Link href="/about-us" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            About Us
+                        </Link>
+                        <Link href="/careers" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Careers
+                        </Link>
+                        <Link href="/faqs" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            FAQs
+                        </Link>
+                        <Link href="/contact-us" className="text-sm text-white/[0.5] hover:text-white" target="_blank">
+                            Contact Us
+                        </Link>
+                    </div>
                 </div>
-                {/* RIGHT END */}
+                {/* MIDDLE END */}
+
+                
             </Wrapper>
+
+            {/* Horizontal White Line */}
+            <hr className="my-10 border-t border-white/[0.25]" />
+
+            {/* BOTTOM START */}
             <Wrapper className="flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0">
                 {/* LEFT START */}
                 <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer text-center md:text-left">
-                    © 2023 Nike, Inc. All Rights Reserved
+                    © 2024 All Rights Reserved
                 </div>
                 {/* LEFT END */}
-
+                {/* MIDDLE START - Social Media Icons */}
+                <div className="flex gap-4 justify-center md:justify-start">
+                    <Link
+                        href="https://www.facebook.com/share/DKKmpzJX3dfDrBZF/?mibextid=qi2Omg"
+                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer" target="_blank"
+                    >
+                        <FaFacebookF size={20} />
+                    </Link>
+                    <Link
+                        href="https://x.com/SaveGazaPK"
+                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer" target="_blank"
+                    >
+                        <FaTwitter size={20} />
+                    </Link>
+                    <Link
+                        href="https://youtube.com/@savegazacampaign?si=De9VqHvjn9H8o_fQ"
+                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer" target="_blank"
+                    >
+                        <FaYoutube size={20} />
+                    </Link>
+                    <Link
+                        href="https://www.instagram.com/savegazacampaign?igsh=MWtzcXpxczVmNXl4eA=="
+                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer" target="_blank"
+                    >
+                        <FaInstagram size={20} />
+                    </Link>
+                </div>
+                {/* MIDDLE END */}
                 {/* RIGHT START */}
                 <div className="flex gap-2 md:gap-5 text-center md:text-left flex-wrap justify-center">
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Guides
-                    </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Terms of Sale
-                    </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Terms of Use
-                    </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
+                    <Link href="/privacy-policy" className="text-[12px] text-white/[0.5] hover:text-white" target="_blank">
                         Privacy Policy
-                    </div>
+                    </Link>
+                    <Link href="/terms-of-use" className="text-[12px] text-white/[0.5] hover:text-white" target="_blank">
+                        Terms of Use
+                    </Link>
+                    <Link href="/site-map" className="text-[12px] text-white/[0.5] hover:text-white" target="_blank">
+                        Site Map
+                    </Link>
                 </div>
                 {/* RIGHT END */}
             </Wrapper>
+            {/* BOTTOM END */}
         </footer>
     );
-};
-
-export default Footer;
+}
