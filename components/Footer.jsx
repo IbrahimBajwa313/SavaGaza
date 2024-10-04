@@ -5,10 +5,10 @@ import Wrapper from "./Wrapper";
 
 export default function Footer() {
     return (
-        <footer className="bg-black text-white pt-14 pb-3 mt-4">
+        <footer className="bg-black text-white pt-14 pb-3 ">
             {/* Subscribe Section */}
             <div className="relative flex justify-center items-center sm:mt-[-80px] mt-0 mb-10">
-                <div className="flex flex-col items-center justify-center w-full md:w-3/4 bg-gradient-to-r from-red-500 via-black to-green-500 p-4 rounded-lg">
+                <div className="flex flex-col items-center justify-center w-full md:w-2/4 bg-gradient-to-r from-[#56ab2f] to-[#a8e063] p-4 rounded-2xl">
                     <h3 className="text-lg md:text-xl font-black mb-4">Subscribe for News Letter</h3>
                     <div className="flex items-center w-full max-w-md">
                         <input

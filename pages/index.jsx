@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import HeroBanner from "@/components/HeroBanner";
+import DeathToll from "@/components/DeathToll";
 import About from "@/components/About";
 import FAQs from "@/components/FAQs"; 
 import LeadersSlider from "@/components/LeadersSlider";
@@ -8,6 +9,8 @@ import { useInView } from "react-hook-inview";
 import { motion } from "framer-motion";
 import HowYouCanHelp from "@/components/HowYouCanHelp";
 import Reviews from "@/components/Reviews";
+import ImageSec from "./ImageSec";
+import './fontawesome';
 import UnitingPak from "@/components/UnitingPak";
 
 export default function Home() {
@@ -24,8 +27,10 @@ export default function Home() {
       <UnitingPak />
 
       <LeadersSlider />
+      <ImageSec />
       <Reviews />
       <FAQs />
+      <DeathToll />
       {/* </Wrapper> */}
     </main>
   );
