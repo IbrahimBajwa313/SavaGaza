@@ -8,6 +8,7 @@ import { useInView } from "react-hook-inview";
 import { motion } from "framer-motion";
 import HowYouCanHelp from "@/components/HowYouCanHelp";
 import Reviews from "@/components/Reviews";
+import UnitingPak from "@/components/UnitingPak";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,8 @@ export default function Home() {
       <HeroBanner />
       <About />
       <HowYouCanHelp />
+      <UnitingPak />
+
       <LeadersSlider />
       <Reviews />
       <FAQs />
