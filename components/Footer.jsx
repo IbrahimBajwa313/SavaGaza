@@ -26,10 +26,10 @@ export default function Footer() {
                 
                 {/* LEFT START */}
                 <div className="flex flex-col gap-3 shrink-0 text-center md:text-left">
-                    <img src="" alt="SGC Logo" className="w-20 mx-auto md:mx-0" />
-                    <div className="text-sm">
+                    <img src="/save-gaza-logo.png" alt="SGC Logo" className="w-20 mx-auto md:mx-0" />
+                    <span className="text-xl font-bold">
                         SGC is working committedly to make Palestine a free state.
-                    </div>
+                    </span>
                 </div>
                 {/* LEFT END */}
 
