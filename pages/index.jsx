@@ -9,6 +9,8 @@ import { useInView } from "react-hook-inview";
 import { motion } from "framer-motion";
 import HowYouCanHelp from "@/components/HowYouCanHelp";
 import Reviews from "@/components/Reviews";
+import ImageSec from "./ImageSec";
+import './fontawesome';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -22,6 +24,7 @@ export default function Home() {
       <About />
       <HowYouCanHelp />
       <LeadersSlider />
+      <ImageSec />
       <Reviews />
       <FAQs />
       <DeathToll />
