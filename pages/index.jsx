@@ -23,14 +23,14 @@ export default function Home() {
       {/* <Wrapper> */}
       <HeroBanner />
       <About />
+      <DeathToll />
       <HowYouCanHelp />
       <UnitingPak />
 
-      <LeadersSlider />
-      <ImageSec />
+      {/* <ImageSec /> */}
       <Reviews />
       <FAQs />
-      <DeathToll />
+      <LeadersSlider />
       {/* </Wrapper> */}
     </main>
   );
