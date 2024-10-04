@@ -6,22 +6,7 @@ import Wrapper from "./Wrapper";
 export default function Footer() {
     return (
         <footer className="bg-black text-white pt-14 pb-3 ">
-            {/* Subscribe Section */}
-            <div className="relative flex justify-center items-center sm:mt-[-80px] mt-0 mb-10">
-                <div className="flex flex-col items-center justify-center w-full md:w-2/4 bg-gradient-to-r from-[#56ab2f] to-[#a8e063] p-4 rounded-2xl">
-                    <h3 className="text-lg md:text-xl font-black mb-4">Subscribe for News Letter</h3>
-                    <div className="flex items-center w-full max-w-md">
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="flex-1 p-2 rounded-l-md text-black focus:outline-none"
-                        />
-                        <button className="bg-red-500 text-white px-4 py-2 rounded-r-md hover:bg-red-600">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
-            </div>
+            
             <Wrapper className="flex flex-col md:flex-row justify-between gap-[50px] md:gap-0">
                 
                 {/* LEFT START */}
