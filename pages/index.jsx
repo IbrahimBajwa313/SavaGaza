@@ -12,6 +12,7 @@ import HowYouCanHelp from "@/components/HowYouCanHelp";
 import Reviews from "@/components/Reviews";
 import ImageSec from "./ImageSec";
 import './fontawesome';
+import UnitingPak from "@/components/UnitingPak";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -23,13 +24,14 @@ export default function Home() {
       {/* <Wrapper> */}
       <HeroBanner />
       <About />
+      <DeathToll />
       <HowYouCanHelp />
-      <LeadersSlider />
-      <ImageSec />
+      <UnitingPak />
+
+      {/* <ImageSec /> */}
       <Reviews />
       <FAQs />
-      <Footer2 />
-      <DeathToll />
+      <LeadersSlider />
       {/* </Wrapper> */}
     </main>
   );
