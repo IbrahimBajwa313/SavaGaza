@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import HeroBanner from "@/components/HeroBanner";
-import About from "@/components/About";
-import LeadersSlider from "@/components/LeadersSlider";
 import DeathToll from "@/components/DeathToll";
+import About from "@/components/About";
+import FAQs from "@/components/FAQs"; 
+import LeadersSlider from "@/components/LeadersSlider";
 import Wrapper from "@/components/Wrapper";
 import { useInView } from "react-hook-inview";
 import { motion } from "framer-motion";
 import HowYouCanHelp from "@/components/HowYouCanHelp";
+import Reviews from "@/components/Reviews";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -15,18 +17,15 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden w-screen z-20">
+      {/* <Wrapper> */}
       <HeroBanner />
-      <Wrapper>
-        <div className="text-center mb-12 max-w-[800px] mt-[50px] md:mt-[80px] mx-auto">
-          {/* <div className="font-bold text-[28px] md:text-[34px] mb-2 leading-tight">
-            Save Gaza About
-          </div> */}
-        </div>
-        <About />
-        <HowYouCanHelp />
-        <LeadersSlider/>
-        <DeathToll />
-      </Wrapper>
+      <About />
+      <HowYouCanHelp />
+      <LeadersSlider />
+      <Reviews />
+      <FAQs />
+      <DeathToll />
+      {/* </Wrapper> */}
     </main>
   );
 }

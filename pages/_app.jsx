@@ -53,8 +53,7 @@ export default function App({ Component, pageProps }) {
 
      
         <Component />
-    {/* </productInfo.Provider> */}
-    
+     
     <Footer />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />

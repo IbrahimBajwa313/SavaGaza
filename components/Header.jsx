@@ -128,13 +128,13 @@ setSuggestions(undefined)
         {/* Logo of the Store */}
         <Link className='flex justify-center items-center' href={"/"}>
           <Image
-            src="/HafizLogo.jpg"
+            src="/save-gaza-logo.png"
             alt="Logo"
             width={90}
             height={90}
             className='w-[80px] md:w-[90px]  mt-2 border border-transparent rounded-md transition-transform duration-300 hover:scale-110 px-4 py-2'
           />
-          <div className='font-bold'>𝘏𝘈𝘍𝘐𝘡 𝘛𝘙𝘈𝘝𝘌𝘓𝘓𝘌𝘙</div>
+          <div className='font-bold text-2xl'>Save Gaza Campiagn</div>
         </Link>
 
 
