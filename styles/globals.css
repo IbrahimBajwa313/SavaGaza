@@ -153,4 +153,9 @@ body{
   .scrollbar::-webkit-scrollbar-thumb {
     transition: background-color 0.3s ease; /* Smooth transition for hover */
   }
+
+  .brightness{
+    --tw-brightness: brightness(.2);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
   
