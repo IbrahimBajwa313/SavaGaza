@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
@@ -46,14 +47,21 @@ const ContactAndSubscribe = () => {
         </div>
       </div>
 
-      {/* Subscribe Section */}
+      {/* Subscribe Section c:\Users\SMART TECH\Desktop\Picture2.png */}
       <div className="bg-white p-8 rounded-2xl shadow-xl max-w-2xl w-full flex flex-col justify-center items-center text-center">
 
-        
-        <h2 className="text-4xl font-extrabold mb-6">Subscribe to our News Letter</h2>
+      <Image
+                  src="/Picture2.png"
+                  alt="Support Image"
+                  layout="responsive"
+                  width={500}
+                  height={10000}
+                  className="rounded-lg transition-transform transform hover:scale-105 duration-300"
+                />
+        {/* <h2 className="text-4xl font-extrabold mb-6">Subscribe to our News Letter</h2> */}
 
         {/* Email Input Field */}
-        <form className="flex flex-col md:flex-row items-center w-full space-y-4 md:space-y-0 md:space-x-4">
+        <form className="flex mt-10 md:mt-20 flex-col md:flex-row items-center w-full space-y-4 md:space-y-0 md:space-x-4">
           <input
             type="email"
             placeholder="Enter your email"
