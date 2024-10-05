@@ -1,6 +1,46 @@
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const Reviews = () => {
+  const [reviews, setReviews] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [testimonial, setTestimonial] = useState("");
+
+  useEffect(() => {
+    // Fetch reviews from MongoDB
+    const fetchReviews = async () => {
+      const res = await fetch("/api/reviews");
+      const data = await res.json();
+      setReviews(data);
+    };
+    fetchReviews();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Send a POST request to the API to submit the review
+    const response = await fetch("/api/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, testimonial }),
+    });
+
+    if (response.ok) {
+      const newReview = await response.json(); // Get the new review from the response
+      alert("Review submitted successfully");
+      setReviews((prevReviews) => [newReview, ...prevReviews].slice(0, 3)); // Add the new review and keep only the latest 3
+      setName("");
+      setEmail("");
+      setTestimonial("");
+    } else {
+      alert("Failed to submit review");
+    }
+  };
+
   return (
     <section className="bg-blue-50 dark:bg-gray-900 py-16 px-6">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -13,29 +53,7 @@ const Reviews = () => {
           <div className="flex flex-col md:flex-row gap-12">
             {/* Reviews Section */}
             <div className="w-full md:w-1/2">
-              {[
-                {
-                  name: "Sarah Connor",
-                  role: "CEO, Skynet Inc.",
-                  testimonial:
-                    "“I’ve had an amazing experience working with this team. Their solutions have been perfect for our company’s needs!”",
-                  imgSrc: "/flag2.jpg",
-                },
-                {
-                  name: "John Doe",
-                  role: "CTO, Cyberdyne Systems",
-                  testimonial:
-                    "“Their attention to detail and customer satisfaction is exceptional. I highly recommend them!”",
-                  imgSrc: "/flag2.jpg",
-                },
-                {
-                  name: "Jane Smith",
-                  role: "Product Manager, Tech Corp",
-                  testimonial:
-                    "“Working with this team has exceeded my expectations. Their designs and execution are top-notch.”",
-                  imgSrc: "/flag2.jpg",
-                },
-              ].map((review, index) => (
+              {reviews.slice(0, 3).map((review, index) => ( // Show only the latest 3 reviews
                 <div
                   key={index}
                   className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-md transition-transform transform hover:scale-105 mb-6"
@@ -43,7 +61,7 @@ const Reviews = () => {
                   <div className="flex items-center mb-3">
                     <Image
                       className="w-10 h-10 rounded-full object-cover"
-                      src={review.imgSrc}
+                      src="/flag2.jpg"
                       alt="profile picture"
                       width={40}
                       height={40}
@@ -53,7 +71,7 @@ const Reviews = () => {
                         {review.name}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 text-sm">
-                        {review.role}
+                        {review.email}
                       </p>
                     </div>
                   </div>
@@ -70,24 +88,28 @@ const Reviews = () => {
                 <h3 className="text-3xl font-bold text-black dark:text-gray-100 mb-6 text-center">
                   Share Your Remarks
                 </h3>
-                <form>
-                  {/* Name and Profession Fields Combined */}
-                  <div className="mb-6 flex gap-6  flex-col   md:flex-row">
+                <form onSubmit={handleSubmit}>
+                  {/* Name and Email Fields */}
+                  <div className="mb-6 flex gap-6 flex-col md:flex-row">
                     <div className="w-full md:w-1/2">
                       <input
                         type="text"
                         id="name"
                         className="w-full p-3 rounded-lg bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-500 focus:outline-none"
                         placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         required
                       />
                     </div>
                     <div className="w-full md:w-1/2">
                       <input
                         type="email"
-                        id="Email"
+                        id="email"
                         className="w-full p-3 rounded-lg bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-500 focus:outline-none"
                         placeholder="Your Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                       />
                     </div>
@@ -100,6 +122,8 @@ const Reviews = () => {
                       className="w-full p-4 rounded-lg bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-500 focus:outline-none"
                       rows="4"
                       placeholder="Share your experience..."
+                      value={testimonial}
+                      onChange={(e) => setTestimonial(e.target.value)}
                       required
                     ></textarea>
                   </div>
