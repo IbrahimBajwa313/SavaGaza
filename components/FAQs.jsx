@@ -38,7 +38,7 @@ const FAQs = () => {
     <section className="bg-blue-50 dark:bg-gray-900 py-16 px-6">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 lg:p-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white text-center">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 text-black dark:text-white text-center">
             Frequently Asked Questions
           </h2>
           <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
@@ -47,7 +47,7 @@ const FAQs = () => {
                 {faqs.map((faq, index) => (
                   <div key={index} className="border-b border-gray-400 pb-4">
                     <button
-                      className="w-full text-left py-4 flex justify-between items-center bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-white transition duration-300 rounded-md px-4 shadow-md"
+                      className="w-full text-left py-4 flex justify-between items-center bg-green-600 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-white transition duration-300 rounded-md px-4 shadow-md"
                       onClick={() => toggleFAQ(index)}
                     >
                       <span className="text-lg font-semibold text-white">{faq.question}</span>
@@ -68,11 +68,11 @@ const FAQs = () => {
             <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/faq.webp"
+                  src="/Picture1.png"
                   alt="Support Image"
                   layout="responsive"
                   width={500}
-                  height={300}
+                  height={10000}
                   className="rounded-lg transition-transform transform hover:scale-105 duration-300"
                 />
               </div>

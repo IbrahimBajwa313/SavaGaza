@@ -6,31 +6,31 @@ const MediaAboutUs = () => {
   const articles = [
     {
       id: 1,
-      image: "/hajj1.jpg", // Replace with your image path
-      title: "Join SGC: Become part of the movement and support our campaign",
+      image: "/protest.jpg", // Replace with your image path
+      title: "Join As a Ground Activist ",
       source: "Join SGC #join",
       date: "12.05.2024",
       link: "/article1", // Replace with your link
     },
     {
       id: 2,
-      image: "/hajj1.jpg", // Replace with your image path
-      title: "Donate: Support our cause by making a generous donation #donate",
+      image: "/protest.jpg", // Replace with your image path
+      title: "Join Us as Your University Ambasador",
       source: "Donate #donate",
       date: "26.04.2024",
       link: "/article2", // Replace with your link
     },
     {
       id: 3,
-      image: "/hajj1.jpg", // Replace with your image path
-      title: "Join SGC: Help us in our projects and initiatives #join",
+      image: "/protest.jpg", // Replace with your image path
+      title: "Join Our Social Media Activists Team",
       source: "Join SGC #join",
       date: "26.03.2024",
       link: "/article3", // Replace with your link
     },
     {
       id: 4,
-      image: "/hajj1.jpg", // Replace with your image path
+      image: "/protest.jpg", // Replace with your image path
       title: "Donate: Your contribution can make a significant difference #donate",
       source: "Donate #donate",
       date: "17.03.2024",
@@ -41,9 +41,15 @@ const MediaAboutUs = () => {
   return (
     <section className="py-12 bg-blue-50 w-full">
       <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-800">
+
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 dark:text-white mb-4">
+                Save Gaza Campaign <span className="text-green-600">Needs You </span>
+              </h1>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-red-700">
           How You Can Help
         </h2>
+
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
           {articles.map((article) => (
             <div
