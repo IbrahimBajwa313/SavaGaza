@@ -47,7 +47,9 @@ const ContactAndSubscribe = () => {
       </div>
 
       {/* Subscribe Section */}
-      <div className="bg-white p-8 rounded-2xl shadow-xl max-w-2xl w-full flex flex-col justify-center items-center text-center">
+      <div 
+        className="p-8 rounded-2xl shadow-xl max-w-2xl w-full flex flex-col justify-center items-center text-center bg-white" 
+      >
 
         
         <h2 className="text-4xl font-extrabold mb-6">Subscribe to our News Letter</h2>
