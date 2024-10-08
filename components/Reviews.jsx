@@ -1,5 +1,14 @@
-import Image from "next/image";
 import { useState, useEffect } from "react";
+
+// Array of random background colors
+const colors = [
+  "#FF5733", "#33FF57", "#3357FF", "#F39C12", "#8E44AD", "#1ABC9C",
+  "#E74C3C", "#2ECC71", "#3498DB", "#9B59B6", "#E67E22", "#34495E"
+];
+
+const getRandomColor = () => {
+  return colors[Math.floor(Math.random() * colors.length)];
+};
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -12,7 +21,14 @@ const Reviews = () => {
     const fetchReviews = async () => {
       const res = await fetch("/api/reviews");
       const data = await res.json();
-      setReviews(data);
+
+      // Assign a random color to each review on initial load
+      const reviewsWithColors = data.map(review => ({
+        ...review,
+        color: getRandomColor()
+      }));
+
+      setReviews(reviewsWithColors);
     };
     fetchReviews();
   }, []);
@@ -31,6 +47,8 @@ const Reviews = () => {
 
     if (response.ok) {
       const newReview = await response.json(); // Get the new review from the response
+      newReview.color = getRandomColor(); // Assign a random color to the new review
+
       alert("Review submitted successfully");
       setReviews((prevReviews) => [newReview, ...prevReviews].slice(0, 3)); // Add the new review and keep only the latest 3
       setName("");
@@ -53,19 +71,19 @@ const Reviews = () => {
           <div className="flex flex-col md:flex-row gap-12">
             {/* Reviews Section */}
             <div className="w-full md:w-1/2">
-              {reviews.slice(0, 3).map((review, index) => ( // Show only the latest 3 reviews
+              {reviews.slice(0, 3).map((review, index) => (
                 <div
                   key={index}
                   className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-md transition-transform transform hover:scale-105 mb-6"
                 >
                   <div className="flex items-center mb-3">
-                    <Image
-                      className="w-10 h-10 rounded-full object-cover"
-                      src="/flag2.jpg"
-                      alt="profile picture"
-                      width={40}
-                      height={40}
-                    />
+                    {/* Avatar with First Letter of Name and Random Color */}
+                    <div
+                      className="w-10 h-10 rounded-full flex justify-center items-center text-white text-lg font-bold"
+                      style={{ backgroundColor: review.color }} // Use the assigned color
+                    >
+                      {review.name[0].toUpperCase()}
+                    </div>
                     <div className="ml-4">
                       <h3 className="text-md font-semibold text-gray-900 dark:text-gray-100">
                         {review.name}
