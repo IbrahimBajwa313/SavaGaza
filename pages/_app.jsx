@@ -7,6 +7,7 @@ import '@/styles/globals.css'
 import Head from 'next/head'
 import { useState, useEffect, createContext, useContext,oneMinusQty } from 'react'
 import Headroom from 'react-headroom'
+import Chatbot from '@/components/Chatbot';
 
 export const productInfo = createContext();
 
@@ -44,18 +45,25 @@ export default function App({ Component, pageProps }) {
         href="https://twitter.com"
         className="fixed bottom-4 right-1 rounded-full bg-white/[0.25] text-green-500 duration-200 hover:scale-110 cursor-pointer"
     >
+             <div
+  className="fixed bottom-0 right-4 z-[9999] cursor-pointer bg-[#0073b1] text-white p-3 w-[200px] text-center rounded-t-lg"
+  onClick={() => setVisible(!visible)}
+>
+  Chat Now
+</div>
+
+
         <FaWhatsapp size={50} />
     </Link>
     
     <Head />
     <Headroom>
-        <Header cart={cart} />
+        <Header />
     </Headroom>
 
      
         <Component />
-     
-    <ContactAndSubscribe />
+  
     <Footer />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />

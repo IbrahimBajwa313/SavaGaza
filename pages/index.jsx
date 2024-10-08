@@ -13,6 +13,7 @@ import Reviews from "@/components/Reviews";
 import ImageSec from "./ImageSec";
 import './fontawesome';
 import UnitingPak from "@/components/UnitingPak";
+import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -31,6 +32,7 @@ export default function Home() {
       {/* <ImageSec /> */}
       <Reviews />
       <FAQs />
+      <ContactAndSubscribe />
       <LeadersSlider />
       {/* </Wrapper> */}
     </main>
