@@ -22,19 +22,19 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden w-screen z-20">
-      {/* <Wrapper> */}
       <HeroBanner />
-      <About />
-      <DeathToll />
-      <HowYouCanHelp />
-      <UnitingPak />
+      <Wrapper className="bg-blue-50 pt-20">
+        <About />
+        <DeathToll />
+        <HowYouCanHelp />
+        <UnitingPak />
 
-      {/* <ImageSec /> */}
-      <Reviews />
-      <FAQs />
-      <ContactAndSubscribe />
-      <LeadersSlider />
-      {/* </Wrapper> */}
+        {/* <ImageSec /> */}
+        <Reviews />
+        <FAQs />
+        <ContactAndSubscribe />
+        <LeadersSlider />
+      </Wrapper>
     </main>
   );
 }

@@ -64,7 +64,7 @@ export default function App({ Component, pageProps }) {
      
         <Component />
   
-    <Footer />
+    <Footer2 />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
