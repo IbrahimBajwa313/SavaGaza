@@ -30,7 +30,7 @@ export default function Home() {
         <HowYouCanHelp />
         <UnitingPak />
 
-        <ImageSec />
+        {/* <ImageSec /> */}
         <Reviews />
         <FAQs />
       <NewsPage />
