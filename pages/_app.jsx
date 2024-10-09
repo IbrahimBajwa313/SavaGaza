@@ -1,5 +1,5 @@
 import ContactAndSubscribe from '@/components/ContactAndSubscribe'
-import Footer from '@/components/Footer'
+import Footer2 from '@/components/Footer2'
 import Header from '@/components/Header'
 import { FaWhatsapp } from "react-icons/fa";
 import Link from 'next/link'
@@ -64,7 +64,7 @@ export default function App({ Component, pageProps }) {
      
         <Component />
   
-    <Footer />
+    <Footer2 />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
