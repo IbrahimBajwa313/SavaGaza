@@ -14,6 +14,7 @@ import ImageSec from "./ImageSec";
 import './fontawesome';
 import UnitingPak from "@/components/UnitingPak";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
+import NewsPage from "@/components/NewsPage";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -29,9 +30,10 @@ export default function Home() {
       <HowYouCanHelp />
       <UnitingPak />
 
-      {/* <ImageSec /> */}
+      <ImageSec />
       <Reviews />
       <FAQs />
+      <NewsPage />
       <ContactAndSubscribe />
       <LeadersSlider />
       {/* </Wrapper> */}
